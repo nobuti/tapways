@@ -141,6 +141,19 @@
         destroy : function( ) {
             $(window).unbind('.fite');
         },
+        isAlready: function(element){
+            var stack=this.styleOriginal, 
+                l = stack.length,
+                found = false;
+
+            while (l--){
+                if (stack[l].$el[0] == element[0]){
+                    found = true;
+                    break;
+                }
+            }
+            return found;
+        },
         reposition : function( ) {
         
             var mainWidth = this.element.width(),
@@ -157,7 +170,9 @@
             var self = this;
             this.childs.each(function(index, child){
                 if (self.options.responsive){
-                    self.styleOriginal.push({ $el: $(child), width: $(child).width(), height: $(child).height() });
+                    if (!self.isAlready($(child))){
+                        self.styleOriginal.push({ $el: $(child), width: $(child).width(), height: $(child).height() });
+                    }
                 }
                 $(child).css('position','absolute');
 
