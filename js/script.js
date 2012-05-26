@@ -116,7 +116,7 @@ jQuery(document).ready(function(){
 					if(response.type == "success") {
 						jQuery('.panel').removeClass('opened');
 						jQuery('#email').val('');
-						jQuery('#url').val();
+						jQuery('#url').val('');
 					}
 					smoke.signal(response.message);
 				}

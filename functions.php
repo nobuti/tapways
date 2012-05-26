@@ -25,6 +25,7 @@
     // Head js inserts
     function my_scripts_method() {
        
+        wp_deregister_script('jquery');
         wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"), false);
         wp_enqueue_script('jquery');
 
@@ -71,6 +72,8 @@
     // Ajax send form callback
     function submit_design_callback() {
         
+        $result['type'] = 'success';
+
         if(trim($_POST['email']) === '')  {
             $result['type'] = "error";
             $result['message'] = 'Please enter your email address.';
@@ -90,7 +93,7 @@
         } else {
             $url = trim($_POST['url']);
         }
-        if(!isset($hasError)) {
+        if($result['type'] == 'success') {
             $emailTo = get_option('admin_email');
             
             $subject = 'Tapways submitted design';
@@ -125,6 +128,7 @@
     }
 
     add_action('wp_ajax_sbdesign', 'submit_design_callback');
+    add_action('wp_ajax_nopriv_sbdesign', 'submit_design_callback');
     
     // Search only in posts
     function SearchFilter($query) {
