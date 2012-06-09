@@ -45,6 +45,7 @@
       </div>
     </div>
     <section class="main">
+      <div class="preload content"><img src="<?php bloginfo('template_directory'); ?>/img/ajax-loader.gif" alt="Close"></div>
       <div class="post">
         <?php 
         	get_images();

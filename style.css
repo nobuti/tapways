@@ -589,6 +589,7 @@ button:hover {
 }
 section.main {
   margin-top: 1.5em;
+  position: relative;
 }
 section.main .post {
   position: absolute;
@@ -673,6 +674,13 @@ section.main article ul li a:hover {
 section.main article ul .divider {
   padding: 0 0.2em;
   color: #999999;
+}
+section.main .preload.content {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: 140px;
+  z-index:99;
 }
 /* For modern browsers */
 header:before,

@@ -19,7 +19,7 @@
              for ( $i=0; $i < $iNumberOfPics ; $i++ ) {
                   echo $aPics[0][$i];
              };
-        };
+        }
     }
     
     // Head js inserts

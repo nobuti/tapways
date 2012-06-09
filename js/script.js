@@ -69,6 +69,7 @@ jQuery(document).ready(function(){
 		info.parent().css('min-height',info.height());
 		Tapways.container = jQuery('div.post');
 		Tapways.container.imagesLoaded(function(){
+				jQuery('.preload.content').remove();
 				Tapways.container.fite({
 					responsive: true,
 					minwidth: 240,
