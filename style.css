@@ -520,6 +520,7 @@ button:hover {
   width: 240px;
   margin-top: 0.5em;
   position: absolute;
+  z-index: 3;
 }
 .info .nav {
   padding: 0.7em 0px 1.5em 0;
